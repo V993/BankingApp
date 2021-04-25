@@ -26,6 +26,10 @@ class App extends Component {
     this.setState({currentUser: newUser})
   }
 
+  boringClick = () => {
+    alert("give me ur money");
+  }
+
   render() {
 
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
@@ -37,10 +41,22 @@ class App extends Component {
     return (
         <div className="wrapper">
           <div className="header">
-            <img
-              src={icon} 
-              alt="Logo"
-            />
+            <div className ="middle">
+              <img
+                src={icon} 
+                alt="Logo"
+              />
+              <br></br>
+              <h3> 
+                <pre>
+                  "The best bank to ever not-exist!" <br></br>
+                      - a person has probably said
+                </pre>
+              </h3> 
+            </div>
+            <br></br>
+            <h1 id="flashy" onClick={this.boringClick}> Trust us! </h1>
+            <h3> . . . with all yo' dough!</h3>
           </div>
           <div className="body">
             <Router>
