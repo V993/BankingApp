@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 class Home extends Component {
     render() {
         return (
-            <div className="body">
+            <div className="body2">
                 <div className="title">
                     <h1 id="bigBoi">Bank of React</h1>
                 </div>

@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 class UserProfile extends Component {
   render() {
     return (
-        <div className="body">
+        <div className="body2">
           <div className="title">
             <h1 id="bigBoi">User Profile</h1>
           </div>
