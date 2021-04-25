@@ -4,6 +4,7 @@ import axios from 'axios';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile'
 import LogIn from './components/LogIn'
+import Credits from './components/Credits'
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
         userName: 'joe_shmo',
         memberSince: '07/23/96',
       },
+      credits: 0,
       creditsAPI: [],
       debitsAPI: [],
       creditsFound: false,
@@ -66,6 +68,7 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
+    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.credits} accountBalance={this.state.accountBalance}/>)
 
     return (
 
@@ -74,6 +77,8 @@ class App extends Component {
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
+            <Route exact path="/credits" render={CreditsComponent}/>
+
             
           </Switch>
         </Router>
