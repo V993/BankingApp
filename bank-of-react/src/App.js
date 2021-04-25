@@ -33,7 +33,7 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.credits} />)
+    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.credits} accountBalance={this.state.accountBalance}/>)
 
     return (
 

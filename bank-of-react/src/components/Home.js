@@ -2,7 +2,6 @@
 
 import React, {Component} from 'react';
 import AccountBalance from './AccountBalance';
-import Credits from './Credits';
 import {Link} from 'react-router-dom'
 
 class Home extends Component {
