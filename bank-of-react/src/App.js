@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
-import UserProfile from './components/UserProfile'
-import LogIn from './components/LogIn'
+import UserProfile from './components/UserProfile';
+import LogIn from './components/LogIn';
+import "./App.css"
+import icon from './bank-icon.jpg'
 
 class App extends Component {
 
@@ -33,15 +35,23 @@ class App extends Component {
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
 
     return (
-
-        <Router>
-          <Switch>
-            <Route exact path="/" render={HomeComponent}/>
-            <Route exact path="/userProfile" render={UserProfileComponent}/>
-            <Route exact path="/login" render={LogInComponent}/>
-            
-          </Switch>
-        </Router>
+        <div className="wrapper">
+          <div className="header">
+            <img
+              src={icon} 
+              alt="Logo"
+            />
+          </div>
+          <div className="body">
+            <Router>
+              <Switch>
+                <Route exact path="/" render={HomeComponent}/>
+                <Route exact path="/userProfile" render={UserProfileComponent}/>
+                <Route exact path="/login" render={LogInComponent}/>
+              </Switch>
+            </Router>
+          </div>
+        </div>
     );
   }
 }
