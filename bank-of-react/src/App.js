@@ -4,6 +4,7 @@ import Home from './components/Home';
 import UserProfile from './components/UserProfile'
 import LogIn from './components/LogIn'
 import Debits from './components/Debits'
+import Credits from './components/Credits'
 import axios from 'axios';
 import AccountBalance from './components/AccountBalance';
 
@@ -14,7 +15,6 @@ class App extends Component {
     super();
 
     this.state = {
-
       accountBalance: 0,
       currentUser: {
         userName: 'joe_shmo',
@@ -85,6 +85,7 @@ class App extends Component {
           <Route exact path="/userProfile" render={ UserProfileComponent } />
           <Route exact path="/login" render={ LogInComponent } />
           <Route exact path="/Debits" render={ DebitComponent } />
+          <Route exact path="/credits" render={ CreditsComponent } />
 
 
         </Switch>
