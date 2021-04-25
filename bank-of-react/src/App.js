@@ -17,7 +17,6 @@ class App extends Component {
         userName: 'joe_shmo',
         memberSince: '07/23/96',
       },
-      credits: 0,
       creditsAPI: [],
       debitsAPI: [],
       creditsFound: false,
@@ -68,7 +67,7 @@ class App extends Component {
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
     );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.credits} accountBalance={this.state.accountBalance}/>)
+    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance}/>)
 
     return (
 
