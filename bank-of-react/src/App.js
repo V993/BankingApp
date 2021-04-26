@@ -18,6 +18,7 @@ class App extends Component {
 
     this.state = {
       accountBalance: 0,
+      balance: 0,
       currentUser: {
         userName: 'joe_shmo',
         memberSince: '07/23/96',
@@ -29,6 +30,15 @@ class App extends Component {
 
     }
   }
+
+  updateBalance = (amount) => {
+    this.setState({ balance: parseInt(amount.target.value) });
+  }
+
+  Subtract = (amount) => {
+    this.setState({ accountBalance: this.state.accountBalance.replace(/\$/g, '') - this.state.balance })
+  }
+
 
   formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -81,6 +91,7 @@ class App extends Component {
     const UserProfileComponent = () => (
       <UserProfile userName={ this.state.currentUser.userName } memberSince={ this.state.currentUser.memberSince } />
     );
+
     
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
     const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance} found={this.state.creditsFound} updateBalance={this.updateBalance}/>)
@@ -115,9 +126,19 @@ class App extends Component {
                 <Route exact path="/Debits" render={ DebitComponent } />
                 <Route exact path="/credits" render={ CreditsComponent } />
               </Switch>
+                                  <input
+          type="number"
+          text="number"
+          value={ this.state.inputBalance }
+          onChange={ this.updateBalance }
+        />
+        <button className="add" onClick={ this.Subtract }>
+          Add
+        </button>
             </Router>
           </div>
         </div>
+
     );
   }
 }

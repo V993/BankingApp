@@ -16,12 +16,16 @@ class Debits extends Component {
                 <div>Username: { this.props.userName }</div>
                 <br></br>
                 <AccountBalance accountBalance={ this.props.accountBalance } />
+
                 <br></br>
                 <div>Debits = { this.props.accountBalance } </div>
                 <Link to="/">
                     <h3 id="flashy">Return to Home</h3>
                 </Link>
+
             </div >
+
+
         )
     }
 }

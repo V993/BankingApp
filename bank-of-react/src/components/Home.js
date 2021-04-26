@@ -28,9 +28,13 @@ class Home extends Component {
                     <h3 id="flashy">UDebits</h3>
                 </Link>
 
+
+
+
                 <Link to="/credits">
                     <h3 id="flashy">UCredits</h3>
                 </Link>
+
             </div>
         );
     }
