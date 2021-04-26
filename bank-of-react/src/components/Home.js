@@ -23,6 +23,8 @@ class Home extends Component {
                 <Link to="/userProfile"><div>User Profile</div></Link>
                 <Link to="/credits"><div>Credits</div></Link>
 
+
+
             </div>
         );
     }
