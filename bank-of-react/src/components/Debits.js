@@ -6,12 +6,42 @@ import axios from 'axios';
 
 
 class Debits extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          apiData: [],
+          description: "",
+          amount: "",
+          date: "",
+        };
+      }
 
+      componentDidMount = async () => {
+        let apiData = await axios.get("https://moj-api.herokuapp.com/debits");
+        apiData = apiData.data;
+        this.setState({apiData});
+      }
+
+      makeTable = (apiData) => {
+        let table = [];
+        console.log(apiData);
+        for(let i = 0; i < apiData.length; i++)
+        {
+            table.push(
+                <tr>
+                    <td>{apiData[i].description}</td>
+                    <td>Amount ${apiData[i].amount}</td>
+                    <td>Date {apiData[i].date}</td>
+                </tr>
+            )
+        }
+      }
 
     render() {
-
+        const {apiData} = this.state;
         return (
             <div className="body2">
+                {this.makeTable(apiData)};
                 <h1 id="flashy"> Debits: </h1>
                 <div>Username: { this.props.userName }</div>
                 <br></br>
