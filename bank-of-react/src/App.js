@@ -31,8 +31,9 @@ class App extends Component {
 
   updateBalance = (amount) => {
     this.setState({
-      accountBalance:
-        parseFloat(this.state.accountBalance) + parseFloat(amount.toFixed(2)),
+      accountBalance: (
+        parseFloat(this.state.accountBalance) + parseFloat(amount.toFixed(2))
+      ).toFixed(2),
     });
   };
 
@@ -112,11 +113,12 @@ class App extends Component {
         updateBalance={this.updateBalance}
       />
     );
-    const DebitComponent = () => (
+    const DebitsComponent = () => (
       <Debits
         userName={this.state.currentUser.userName}
         debits={this.state.debitsAPI}
         accountBalance={this.state.accountBalance}
+        found={this.state.debitsFound}
         updateBalance={this.updateBalance}
       />
     );
@@ -147,7 +149,7 @@ class App extends Component {
               <Route exact path="/" render={HomeComponent} />
               <Route exact path="/userProfile" render={UserProfileComponent} />
               <Route exact path="/login" render={LogInComponent} />
-              <Route exact path="/Debits" render={DebitComponent} />
+              <Route exact path="/Debits" render={DebitsComponent} />
               <Route exact path="/credits" render={CreditsComponent} />
             </Switch>
           </Router>
