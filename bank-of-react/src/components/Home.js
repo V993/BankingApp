@@ -11,7 +11,7 @@ class Home extends Component {
         return (
             <div className="body2">
                 <div className="title">
-                    <h1 id="bigBoi">Bank of React</h1>
+                    <h1>Bank of React</h1>
                 </div>
 
                 <br></br>
@@ -27,9 +27,6 @@ class Home extends Component {
                 <Link to='/Debits'>
                     <h3 id="flashy">UDebits</h3>
                 </Link>
-
-
-
 
                 <Link to="/credits">
                     <h3 id="flashy">UCredits</h3>

@@ -126,16 +126,17 @@ class App extends Component {
                 <Route exact path="/Debits" render={ DebitComponent } />
                 <Route exact path="/credits" render={ CreditsComponent } />
               </Switch>
-                                  <input
-          type="number"
-          text="number"
-          value={ this.state.inputBalance }
-          onChange={ this.updateBalance }
-        />
-        <button className="add" onClick={ this.Subtract }>
-          Add
-        </button>
             </Router>
+            <input
+              type="number"
+              text="number"
+              className="search-bar"
+              value={ this.state.inputBalance }
+              onChange={ this.updateBalance }
+            />
+            <button className="add" onClick={ this.Subtract }>
+              Add
+            </button>
           </div>
         </div>
 
