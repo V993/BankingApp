@@ -1,5 +1,5 @@
 {
-  
+  "homepage": "http://V993.github.io/BankingApp",
   "name": "bank-of-react",
   
   "version": "0.1.0",
@@ -38,6 +38,7 @@
   },
   
   "scripts": {
+<<<<<<< HEAD
   
     
   "start": "react-scripts start",
@@ -51,6 +52,14 @@
     
   "eject": "react-scripts eject"
   
+=======
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+>>>>>>> fb57dcd2847c7faee7576dcdbfcb5edffd627581
   },
   
   "eslintConfig": {
