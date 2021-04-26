@@ -63,7 +63,6 @@ class App extends Component {
 
   }
 
-
   mockLogIn = (logInInfo) => {
     const newUser = { ...this.state.currentUser }
     newUser.userName = logInInfo.userName
@@ -82,7 +81,7 @@ class App extends Component {
     );
     
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance}/>)
+    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance} found={this.state.creditsFound}/>)
     const DebitComponent = () => (<Debits userName={ this.state.currentUser.userName } debits={ this.state.accountBalance } accountBalance={ this.state.accountBalance } />)
 
 
