@@ -33,11 +33,17 @@ class LogIn extends Component {
 
   render() {
     if (this.state.redirect) {
-      return (<Redirect to="/userProfile" />)
+      return (<Redirect to="/BankingApp/userProfile/" />)
     }
 
     return (
       <div>
+        <div className="title">
+          <h1 id="bigBoi">Login</h1>
+        </div>
+
+        <br></br>
+
         <form onSubmit={ this.handleSubmit }>
           <div>
             <label htmlFor="userName">Username: </label>
@@ -61,9 +67,9 @@ class LogIn extends Component {
               placeholder="Enter password: " 
             />
           </div>
-          <button>Log In</button>
+          <button className="search-button">Log In</button>
         </form>
-        <Link to="/">
+        <Link to="/BankingApp/">
           <h3 id="flashy">Return to Home</h3>
         </Link>
       </div>

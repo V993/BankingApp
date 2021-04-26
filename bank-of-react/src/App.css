@@ -35,7 +35,7 @@ img {
 .body {
   display: flex;
   flex-direction: column;
-  padding: 10%;
+  padding: 30px;
   background-color:blanchedalmond;
   border-radius: 20px;
   justify-content: space-between;
@@ -46,6 +46,20 @@ img {
   flex-direction: column;
   background-color:blanchedalmond;
   border-radius: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-evenly;
+  margin:  0 -25px;
+}
+
+tr, td {
+  border: 1px solid cornflowerblue;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 #flashy {
@@ -62,6 +76,8 @@ img {
   background-color: cornflowerblue;
   color: antiquewhite;
   text-align: center;
+  width:200px;
+  height:auto;
   border-radius: 25px;
 }
 
@@ -69,6 +85,7 @@ img {
   padding: 25px;
   border:crimson solid 3px;
   border-radius: 25px;
+  text-align: center;
 }
 
 #bigBoi {
@@ -81,4 +98,10 @@ img {
   border-radius: 25px;
   text-indent: 4px;
   margin: 10px;
+}
+
+.search-button {
+  border: 1px solid black;
+  border-radius: 25px;
+  margin:10px;
 }

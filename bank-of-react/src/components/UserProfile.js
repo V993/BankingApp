@@ -15,7 +15,7 @@ class UserProfile extends Component {
           <br></br>
           <div id="flashy">Member Since: {this.props.memberSince}</div>
 
-          <Link to="/">
+          <Link to="/BankingApp/">
             <h3 id="flashy">Return to Home</h3>
           </Link>
         </div>

@@ -16,19 +16,19 @@ class Home extends Component {
 
                 <br></br>
 
-                <Link to="/userProfile">
+                <Link to="/BankingApp/userProfile">
                     <h3 id="flashy">User Profile</h3>
                 </Link>
 
-                <Link to='/Login'>
+                <Link to='/BankingApp/Login'>
                     <h3 id="flashy">Login</h3>
                 </Link>
 
-                <Link to='/Debits'>
+                <Link to='/BankingApp/Debits'>
                     <h3 id="flashy">UDebits</h3>
                 </Link>
 
-                <Link to="/credits">
+                <Link to="/BankingApp/credits">
                     <h3 id="flashy">UCredits</h3>
                 </Link>
 

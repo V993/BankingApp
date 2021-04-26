@@ -71,29 +71,40 @@ class Credits extends Component {
   render() {
     return (
       <div>
-        <h1>Credits</h1>
+        <div className="title">
+          <h1 id="bigBoi">Credits</h1>
+        </div>
 
-        <div>Welcome, {this.props.userName}.</div>
-        <AccountBalance accountBalance={this.props.accountBalance} />
-        <div>Number of credits: {this.state.credits.length}</div>
-        <table id="credit-transactions">
+        <div className="content">
+          Welcome, {this.props.userName}. 
+        </div>
+
+
+        <div className="content">
+          <AccountBalance accountBalance={this.props.accountBalance} />
+          <div className="balance">
+            <h3>Number of credits: </h3> 
+            {this.state.credits.length}</div>
+        </div>
+
+        <table>
           <tbody>{this.makeTable()}</tbody>
         </table>
         <br></br>
 
         <form id="credit-field" onSubmit={this.handleSubmit}>
-          <h2>New Transaction</h2>
-          <div>
+          <h2 className="title">New Transaction: </h2>
+          <div className="body">
             <input
+              className="search-bar"
               type="text"
               placeholder="ACH Direct Deposit *COMPANY"
               name="desc"
               required
               onChange={this.handleDesc}
             />
-          </div>
-          <div>
             <input
+              className="search-bar"
               type="number"
               min="1"
               step="0.01"
@@ -102,11 +113,13 @@ class Credits extends Component {
               required
               onChange={this.handleAmt}
             />
+           <button className="search-button">Add Credit</button>
           </div>
-          <button>Add Credit</button>
         </form>
 
-        <Link to="/">Return to Home</Link>
+        <Link to="/BankingApp/">
+          <h3 id="flashy">Return to Home</h3>
+        </Link>
       </div>
     );
   }

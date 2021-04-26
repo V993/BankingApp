@@ -76,30 +76,39 @@ class Debits extends Component {
   render() {
     return (
       <div>
-        <h1>Debits</h1>
+        <div className="title">
+          <h1 id="bigBoi">Debits</h1>
+        </div>
 
-        <div>Welcome, {this.props.userName}.</div>
-        <AccountBalance accountBalance={this.props.accountBalance} />
-        <div>Number of debits: {this.state.debits.length}</div>
-        <table id="debit-transactions">
+        <div className="content">
+          Welcome, {this.props.userName}. 
+        </div>
+
+        <div className="content">
+          <AccountBalance accountBalance={this.props.accountBalance} />
+          <div className="balance">
+            <h3>Number of debits: </h3> 
+            {this.state.debits.length}</div>
+        </div>
+
+        <table>
           <tbody>{this.makeTable()}</tbody>
         </table>
         <br></br>
 
         <form id="debit-field" onSubmit={this.handleSubmit}>
-          <h2>New Transaction</h2>
-          <div>
+          <h2 className="title">New Transaction: </h2>
+          <div className="body">
             <input
+              className="search-bar"
               type="text"
               placeholder="College Tuition Fees"
               name="desc"
               required
               onChange={this.handleDesc}
             />
-          </div>
-
-          <div>
             <input
+              className="search-bar"
               type="number"
               min="1"
               step="0.01"
@@ -108,11 +117,14 @@ class Debits extends Component {
               required
               onChange={this.handleAmt}
             />
+            <button className="search-button">Add Debit</button>
           </div>
-          <button>Add Debit</button>
+          
         </form>
 
-        <Link to="/">Return to Home</Link>
+        <Link to="/BankingApp/">
+          <h3 id="flashy">Return to Home</h3>
+        </Link>
       </div>
     );
   }

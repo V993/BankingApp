@@ -146,11 +146,11 @@ class App extends Component {
         <div className="body">
           <Router>
             <Switch>
-              <Route exact path="/" render={HomeComponent} />
-              <Route exact path="/userProfile" render={UserProfileComponent} />
-              <Route exact path="/login" render={LogInComponent} />
-              <Route exact path="/Debits" render={DebitsComponent} />
-              <Route exact path="/credits" render={CreditsComponent} />
+              <Route exact path="/BankingApp/" render={HomeComponent} />
+              <Route exact path="/BankingApp/userProfile" render={UserProfileComponent} />
+              <Route exact path="/BankingApp/login" render={LogInComponent} />
+              <Route exact path="/BankingApp/Debits" render={DebitsComponent} />
+              <Route exact path="/BankingApp/credits" render={CreditsComponent} />
             </Switch>
           </Router>
         </div>
