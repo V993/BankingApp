@@ -7,6 +7,8 @@ import Debits from './components/Debits'
 import Credits from './components/Credits'
 import axios from 'axios';
 import AccountBalance from './components/AccountBalance';
+import "./App.css"
+import icon from './bank-icon.jpg'
 
 
 class App extends Component {
@@ -36,6 +38,7 @@ class App extends Component {
   Subtract = (amount) => {
     this.setState({ accountBalance: this.state.accountBalance.replace(/\$/g, '') - this.state.balance })
   }
+
 
   formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -69,37 +72,61 @@ class App extends Component {
 
   }
 
-
   mockLogIn = (logInInfo) => {
     const newUser = { ...this.state.currentUser }
     newUser.userName = logInInfo.userName
     this.setState({ currentUser: newUser })
   }
 
-  render() {
+  boringClick = () => {
+    alert("give me ur money");
+  }
 
+  updateBalance = (amount) => {
+    this.setState({ accountBalance: this.state.accountBalance + amount });
+  }
+
+  render() {
     const HomeComponent = () => (<Home accountBalance={ this.state.accountBalance } />);
     const UserProfileComponent = () => (
       <UserProfile userName={ this.state.currentUser.userName } memberSince={ this.state.currentUser.memberSince } />
     );
-    const LogInComponent = () => (<LogIn user={ this.state.currentUser } mockLogIn={ this.mockLogIn } />)
-    const DebitComponent = () => (
-      <Debits userName={ this.state.currentUser.userName }
-        debits={ this.state.accountBalance }
-        accountBalance={ this.state.accountBalance }
-      />);
-    const CreditsComponent = () => (<Credits userName={ this.state.currentUser.userName } credits={ this.state.creditsAPI } accountBalance={ this.state.accountBalance } />)
-    return (
 
-      <Router>
-        <Switch>
-          <Route exact path="/" render={ HomeComponent } />
-          <Route exact path="/userProfile" render={ UserProfileComponent } />
-          <Route exact path="/login" render={ LogInComponent } />
-          <Route exact path="/Debits" render={ DebitComponent } />
-          <Route exact path="/credits" render={ CreditsComponent } />
-        </Switch>
-        <input
+    
+    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
+    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance} found={this.state.creditsFound} updateBalance={this.updateBalance}/>)
+    const DebitComponent = () => (<Debits userName={ this.state.currentUser.userName } debits={ this.state.debitsAPI } accountBalance={ this.state.accountBalance } updateBalance={this.updateBalance} />)
+
+    return (
+        <div className="wrapper">
+          <div className="header">
+            <div className ="middle">
+              <img
+                src={icon} 
+                alt="Logo"
+              />
+              <br></br>
+              <h3> 
+                <pre>
+                  "The best bank to ever not-exist!" <br></br>
+                      - a person has probably said
+                </pre>
+              </h3> 
+            </div>
+            <br></br>
+            <h1 id="flashy" onClick={this.boringClick}> Trust us! </h1>
+            <h3> . . . with all yo' dough!</h3>
+          </div>
+          <div className="body">
+            <Router>
+              <Switch>
+                <Route exact path="/" render={HomeComponent}/>
+                <Route exact path="/userProfile" render={UserProfileComponent}/>
+                <Route exact path="/login" render={LogInComponent}/>
+                <Route exact path="/Debits" render={ DebitComponent } />
+                <Route exact path="/credits" render={ CreditsComponent } />
+              </Switch>
+                                  <input
           type="number"
           text="number"
           value={ this.state.inputBalance }
@@ -108,8 +135,9 @@ class App extends Component {
         <button className="add" onClick={ this.Subtract }>
           Add
         </button>
-
-      </Router>
+            </Router>
+          </div>
+        </div>
 
     );
   }

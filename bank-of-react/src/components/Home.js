@@ -8,22 +8,32 @@ import Debit from './Debits';
 class Home extends Component {
 
     render() {
-
-
         return (
-            <div>
-                <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank" />
-                <h1>Bank of React</h1>
-                <Link to="/userProfile">User Profile</Link>
+            <div className="body2">
+                <div className="title">
+                    <h1 id="bigBoi">Bank of React</h1>
+                </div>
+
                 <br></br>
-                <Link to='/Login'>Login</Link>
-                <br></br>
-                <Link to='/Debits'>Debits</Link>
 
-                <Link to="/userProfile"><div>User Profile</div></Link>
-                <Link to="/credits"><div>Credits</div></Link>
+                <Link to="/userProfile">
+                    <h3 id="flashy">User Profile</h3>
+                </Link>
+
+                <Link to='/Login'>
+                    <h3 id="flashy">Login</h3>
+                </Link>
+
+                <Link to='/Debits'>
+                    <h3 id="flashy">UDebits</h3>
+                </Link>
 
 
+
+
+                <Link to="/credits">
+                    <h3 id="flashy">UCredits</h3>
+                </Link>
 
             </div>
         );

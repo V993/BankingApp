@@ -38,19 +38,34 @@ class LogIn extends Component {
 
     return (
       <div>
-        <Link to="/">Return to Home</Link>
         <form onSubmit={ this.handleSubmit }>
           <div>
-
-            <label htmlFor="userName">User Name</label>
-            <input type="text" name="userName" onChange={ this.handleChange } value={ this.state.user.userName } />
+            <label htmlFor="userName">Username: </label>
+            <input 
+              type="text" 
+              name="userName" 
+              className="search-bar"
+              placeholder="Enter username: "
+              onChange={ this.handleChange } 
+              value={ this.state.user.userName } 
+            />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" />
+            <label htmlFor="password">
+              <t>Password:  </t> 
+            </label>
+            <input 
+              type="password" 
+              name="password"
+              className="search-bar"
+              placeholder="Enter password: " 
+            />
           </div>
           <button>Log In</button>
         </form>
+        <Link to="/">
+          <h3 id="flashy">Return to Home</h3>
+        </Link>
       </div>
     )
   }
