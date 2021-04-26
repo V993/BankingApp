@@ -14,28 +14,23 @@ class Home extends Component {
                     <h1 id="bigBoi">Bank of React</h1>
                 </div>
 
+                <br></br>
+
                 <Link to="/userProfile">
                     <h3 id="flashy">User Profile</h3>
                 </Link>
-
-                <br></br>
 
                 <Link to='/Login'>
                     <h3 id="flashy">Login</h3>
                 </Link>
 
-                <br></br>
-
                 <Link to='/Debits'>
                     <h3 id="flashy">UDebits</h3>
                 </Link>
 
-                <br></br>
-
                 <Link to="/credits">
                     <h3 id="flashy">UCredits</h3>
                 </Link>
-
             </div>
         );
     }

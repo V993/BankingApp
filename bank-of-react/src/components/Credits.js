@@ -23,14 +23,19 @@ class Credits extends Component {
 
   render() {
     return (
-        <div>
-          <h1>Credits</h1>
+        <div className="body2">
+          <h1 id="flashy">Credits</h1>
 
           <div>Welcome, {this.props.userName}.</div>
+          <br></br>
           <AccountBalance accountBalance={this.props.accountBalance}/>
+          <br></br>
           <div>Number of credits: {this.props.credits.length}</div>
+          <br></br>
 
-          <Link to="/">Return to Home</Link>
+          <Link to="/">
+            <h3 id="flashy">Return to Home</h3>
+          </Link>
         </div>
     );
   }

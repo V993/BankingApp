@@ -8,6 +8,7 @@
   border: 10px solid black;
   border-radius: 20px;
   margin: 20px;
+  justify-content:space-around;
 }
 
 img {
@@ -45,7 +46,6 @@ img {
   flex-direction: column;
   background-color:blanchedalmond;
   border-radius: 20px;
-  justify-content: space-between;
 }
 
 #flashy {
@@ -58,15 +58,12 @@ img {
 
 .balance {
   display: flex;
-  flex-direction: row;
-  padding: 15%;
+  flex-direction: column;
   background-color: cornflowerblue;
   color: antiquewhite;
   text-align: center;
   border-radius: 25px;
-  justify-content: space-between;
 }
-
 
 .title {
   padding: 25px;
@@ -77,4 +74,11 @@ img {
 #bigBoi {
   color: black;
   text-transform: capitalize;
+}
+
+.search-bar {
+  border: 1px solid black;
+  border-radius: 25px;
+  text-indent: 4px;
+  margin: 10px;
 }
