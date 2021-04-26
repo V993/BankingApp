@@ -7,6 +7,8 @@ import Debits from './components/Debits'
 import Credits from './components/Credits'
 import axios from 'axios';
 import AccountBalance from './components/AccountBalance';
+import "./App.css"
+import icon from './bank-icon.jpg'
 
 
 class App extends Component {
@@ -68,6 +70,10 @@ class App extends Component {
     this.setState({ currentUser: newUser })
   }
 
+  boringClick = () => {
+    alert("give me ur money");
+  }
+
   render() {
 
     const HomeComponent = () => (<Home accountBalance={ this.state.accountBalance } />);
@@ -81,18 +87,37 @@ class App extends Component {
 
 
     return (
-
-      <Router>
-        <Switch>
-          <Route exact path="/" render={ HomeComponent } />
-          <Route exact path="/userProfile" render={ UserProfileComponent } />
-          <Route exact path="/login" render={ LogInComponent } />
-          <Route exact path="/Debits" render={ DebitComponent } />
-          <Route exact path="/credits" render={ CreditsComponent } />
-
-
-        </Switch>
-      </Router>
+        <div className="wrapper">
+          <div className="header">
+            <div className ="middle">
+              <img
+                src={icon} 
+                alt="Logo"
+              />
+              <br></br>
+              <h3> 
+                <pre>
+                  "The best bank to ever not-exist!" <br></br>
+                      - a person has probably said
+                </pre>
+              </h3> 
+            </div>
+            <br></br>
+            <h1 id="flashy" onClick={this.boringClick}> Trust us! </h1>
+            <h3> . . . with all yo' dough!</h3>
+          </div>
+          <div className="body">
+            <Router>
+              <Switch>
+                <Route exact path="/" render={HomeComponent}/>
+                <Route exact path="/userProfile" render={UserProfileComponent}/>
+                <Route exact path="/login" render={LogInComponent}/>
+                <Route exact path="/Debits" render={ DebitComponent } />
+                <Route exact path="/credits" render={ CreditsComponent } />
+              </Switch>
+            </Router>
+          </div>
+        </div>
     );
   }
 }
