@@ -30,7 +30,6 @@ class App extends Component {
     }
   }
 
-
   formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -63,7 +62,6 @@ class App extends Component {
 
   }
 
-
   mockLogIn = (logInInfo) => {
     const newUser = { ...this.state.currentUser }
     newUser.userName = logInInfo.userName
@@ -74,17 +72,19 @@ class App extends Component {
     alert("give me ur money");
   }
 
-  render() {
+  updateBalance = (amount) => {
+    this.setState({ accountBalance: this.state.accountBalance + amount });
+  }
 
+  render() {
     const HomeComponent = () => (<Home accountBalance={ this.state.accountBalance } />);
     const UserProfileComponent = () => (
       <UserProfile userName={ this.state.currentUser.userName } memberSince={ this.state.currentUser.memberSince } />
     );
     
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
-    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance}/>)
-    const DebitComponent = () => (<Debits userName={ this.state.currentUser.userName } debits={ this.state.accountBalance } accountBalance={ this.state.accountBalance } />)
-
+    const CreditsComponent = () => (<Credits userName={this.state.currentUser.userName} credits={this.state.creditsAPI} accountBalance={this.state.accountBalance} found={this.state.creditsFound} updateBalance={this.updateBalance}/>)
+    const DebitComponent = () => (<Debits userName={ this.state.currentUser.userName } debits={ this.state.debitsAPI } accountBalance={ this.state.accountBalance } updateBalance={this.updateBalance} />)
 
     return (
         <div className="wrapper">

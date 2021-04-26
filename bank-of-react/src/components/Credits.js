@@ -12,30 +12,49 @@ class Credits extends Component {
         amount: "",
         date: "",
         credits: [],
+        found: false
     }
-    console.log(this.props);
-    console.log(this.props.credits);
   }
 
   componentDidMount() {
     this.setState({ credits: this.props.credits.map(credit => credit) });
-  }
+  } // retrieve credits from API
+
+  makeTable = () => {
+    let currData = this.props.credits;
+    let foundMatch = this.props.found;
+    let table = [];
+    if (!foundMatch) {
+        table.push(<tr key={-1}><td>No credit transactions found</td></tr>);
+        return table;
+    } else {
+        currData.map((credit, c_key) => {
+          table.push(
+            <tr key={c_key}>
+              <td>Description: {credit.description}</td>
+              <td>Amount: {credit.amount}</td>
+              <td>Date: {credit.date}</td>
+            </tr>
+          );
+        })
+        return table;
+    }
+}   
 
   render() {
     return (
-        <div className="body2">
-          <h1 id="flashy">Credits</h1>
+        <div>
+          <h1>Credits</h1>
 
           <div>Welcome, {this.props.userName}.</div>
-          <br></br>
           <AccountBalance accountBalance={this.props.accountBalance}/>
-          <br></br>
           <div>Number of credits: {this.props.credits.length}</div>
+          <table id="credit-transactions">
+            <tbody>{this.makeTable()}</tbody>
+          </table>
           <br></br>
 
-          <Link to="/">
-            <h3 id="flashy">Return to Home</h3>
-          </Link>
+          <Link to="/">Return to Home</Link>
         </div>
     );
   }
