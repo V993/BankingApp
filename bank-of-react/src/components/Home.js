@@ -1,10 +1,12 @@
 // src/components/Home.js
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import AccountBalance from './AccountBalance';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Debit from './Debits';
 
 class Home extends Component {
+
     render() {
         return (
             <div className="body2">
@@ -16,7 +18,24 @@ class Home extends Component {
                     <h3 id="flashy">User Profile</h3>
                 </Link>
 
-                <AccountBalance accountBalance={this.props.accountBalance}/>
+                <br></br>
+
+                <Link to='/Login'>
+                    <h3 id="flashy">Login</h3>
+                </Link>
+
+                <br></br>
+
+                <Link to='/Debits'>
+                    <h3 id="flashy">UDebits</h3>
+                </Link>
+
+                <br></br>
+
+                <Link to="/credits">
+                    <h3 id="flashy">UCredits</h3>
+                </Link>
+
             </div>
         );
     }
